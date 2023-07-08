@@ -1,0 +1,28 @@
+{
+  "name": "asteroids-api",
+  "version": "1.0.0",
+  "description": "asteroids api",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node ./scripts/start-api.mjs",
+    "start:api": "node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express"
+  ],
+  "author": "jcaviedesc",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "child_process": "^1.0.2",
+    "ora": "^6.3.1",
+    "typescript": "^5.1.6"
+  }
+}

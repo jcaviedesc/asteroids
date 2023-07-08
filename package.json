@@ -8,6 +8,23 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcaviedesc/asteroids.git"
+  },
+  "keywords": [
+    "asteroids",
+    "nasa",
+    "express",
+    "nextjs",
+    "react"
+  ],
+  "author": "jcaviedesc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcaviedesc/asteroids/issues"
+  },
+  "homepage": "https://github.com/jcaviedesc/asteroids#readme",
   "dependencies": {
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",

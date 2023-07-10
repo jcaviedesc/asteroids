@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Getting Started Client
 
 First, run the development server:
 
@@ -32,3 +32,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Getting Started Client
+
+1. The api code of the asteroid application is in the `/api` folder
+
+```bash
+cd api
+```
+
+2. install node_modules required to api
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3 build and run api, you have 2 options:
+
+- run `yarn build` then run `yarn start:api`
+- run script `yarn start`

@@ -1,6 +1,7 @@
 import express from "express";
 
 import asteroidRoutes from "./src/routes/AsteroidRouter";
+import favouriteRouts from "./src/routes/FavouriteRouter";
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,6 +14,7 @@ app.use("/api/v1", apiRouter);
 
 // routes by domain
 apiRouter.use(asteroidRoutes);
+apiRouter.use(favouriteRouts);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

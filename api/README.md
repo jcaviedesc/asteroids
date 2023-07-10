@@ -18,3 +18,7 @@ yarn start
 - The folder `/src/routes/` has router for each Domain
 - The folder `/src/shared` has resources used for all app
 - Finally the index.ts file is the root of aplication
+
+## Endponts
+
+- list favourites by user id `/api/v1/favourties/users/1001`

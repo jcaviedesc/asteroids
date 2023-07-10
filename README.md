@@ -33,7 +33,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Getting Started Client
+## Getting Started Api
 
 1. The api code of the asteroid application is in the `/api` folder
 

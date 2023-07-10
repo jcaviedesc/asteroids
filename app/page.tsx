@@ -1,49 +1,17 @@
 import Image from "next/image";
 import AsteroidItemClientWrapper from "./_components/AsteroidItem.client";
+import nasaService from "../services/nasa.service";
 
-const asteroids = [
-  {
-    id: "123",
-    name: "Asteroid 1",
-    absoluteMagnitudeH: 26.9,
-    estimatedDiameterKm: 10,
-    estimatedDiameterM: 10000,
-    estimatedDiameterMi: 6.2,
-    estimatedDiameterFi: 32808.4,
-    isPotentiallyHazardousAsteroid: false,
-    closeApproachDate: "2022-12-31",
-    orbitingBody: "Earth",
-    isFavorite: true,
-  },
-  {
-    id: "456",
-    name: "Asteroid 2",
-    absoluteMagnitudeH: 30.2,
-    estimatedDiameterKm: 5,
-    estimatedDiameterM: 5000,
-    estimatedDiameterMi: 3.1,
-    estimatedDiameterFi: 16404.2,
-    isPotentiallyHazardousAsteroid: true,
-    closeApproachDate: "2022-11-15",
-    orbitingBody: "Moon",
-    isFavorite: false,
-  },
-  {
-    id: "789",
-    name: "Asteroid 3",
-    absoluteMagnitudeH: 28.5,
-    estimatedDiameterKm: 8,
-    estimatedDiameterM: 8000,
-    estimatedDiameterMi: 4.9,
-    estimatedDiameterFi: 26246.7,
-    isPotentiallyHazardousAsteroid: false,
-    closeApproachDate: "2022-10-01",
-    orbitingBody: "Mars",
-    isFavorite: true,
-  },
-];
+type HomeProps = {
+  searchParams: {
+    start_date: string;
+    end_date: string;
+  };
+};
 
-export default function Home() {
+export default async function Home({ searchParams }: HomeProps) {
+  console.log(searchParams);
+  const asteroidsData = await nasaService.getAsteroids(searchParams);
   return (
     <div>
       <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
@@ -60,7 +28,10 @@ export default function Home() {
         </div>
       </header>
       <main className="flex flex-col justify-between pt-12">
-        {asteroids.map((asteroid) => (
+        <div className="flex justify-end pr-12 pl-12">
+          <p className="text-right">Total: {asteroidsData.total}</p>
+        </div>
+        {asteroidsData.data.map((asteroid) => (
           <AsteroidItemClientWrapper key={asteroid.id} {...asteroid} />
         ))}
       </main>

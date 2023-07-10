@@ -30,7 +30,7 @@ const AsteroidItem: React.FC<AsteroidItemProps> = ({
   onAddToFavorite = () => {},
 }) => {
   return (
-    <div className="border-b border-gray-300 p-6 rounded flex flex-col">
+    <div className="border-b border-gray-300 pr-12 pl-12 pb-6 pt-6 rounded flex flex-col">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold">{name}</h2>
         <button

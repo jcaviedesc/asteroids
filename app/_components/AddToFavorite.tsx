@@ -1,14 +1,16 @@
 "use client";
+import { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
-export function FavouriteButton({
-  id,
-  isFavorite,
-}: {
+type FavouriteButtonProps = {
   id: number | string;
-  isFavorite: boolean;
-}) {
-  const onAddToFavorite = (id) => {
+  isFavourite: boolean;
+};
+export function FavouriteButton({ id, isFavourite }: FavouriteButtonProps) {
+  const [favourite, setFavourite] = useState(isFavourite);
+  const onAddToFavorite = (id: FavouriteButtonProps["id"]) => {
+    setFavourite((prevFav) => !prevFav);
+    // TODO execute dispatch action to add to favourites
     console.log(id);
   };
   return (
@@ -18,7 +20,7 @@ export function FavouriteButton({
         onAddToFavorite(id);
       }}
     >
-      {isFavorite ? <FaHeart /> : <FaRegHeart />}
+      {favourite ? <FaHeart /> : <FaRegHeart />}
     </button>
   );
 }

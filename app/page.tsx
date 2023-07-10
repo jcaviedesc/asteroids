@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { DatePickerRange } from "./_components/DatePickerRange";
 import ListOfAsteroids from "./_components/ListAsteroids";
 

@@ -11,7 +11,7 @@ export interface AsteroidItemProps {
   isPotentiallyHazardousAsteroid: boolean;
   closeApproachDate: string;
   orbitingBody: string;
-  isFavorite: boolean;
+  isFavourite: boolean;
 }
 
 const AsteroidItem: React.FC<AsteroidItemProps> = ({
@@ -25,7 +25,7 @@ const AsteroidItem: React.FC<AsteroidItemProps> = ({
   isPotentiallyHazardousAsteroid,
   closeApproachDate,
   orbitingBody,
-  isFavorite,
+  isFavourite,
 }) => {
   return (
     <div className="border-b border-gray-300 pr-12 pl-12 pb-6 pt-6 rounded flex flex-col">
@@ -54,7 +54,7 @@ const AsteroidItem: React.FC<AsteroidItemProps> = ({
         </div>
       </div>
       <div className="flex justify-end">
-        <FavouriteButton isFavorite={isFavorite} id={id} />
+        <FavouriteButton isFavourite={isFavourite} id={id} />
       </div>
     </div>
   );

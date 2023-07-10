@@ -1,4 +1,4 @@
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FavouriteButton } from "./AddToFavorite";
 
 export interface AsteroidItemProps {
   id: string;
@@ -12,7 +12,6 @@ export interface AsteroidItemProps {
   closeApproachDate: string;
   orbitingBody: string;
   isFavorite: boolean;
-  onAddToFavorite?: (id: string) => void;
 }
 
 const AsteroidItem: React.FC<AsteroidItemProps> = ({
@@ -27,20 +26,11 @@ const AsteroidItem: React.FC<AsteroidItemProps> = ({
   closeApproachDate,
   orbitingBody,
   isFavorite,
-  onAddToFavorite = () => {},
 }) => {
   return (
     <div className="border-b border-gray-300 pr-12 pl-12 pb-6 pt-6 rounded flex flex-col">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold">{name}</h2>
-        <button
-          className="text-red-500 hover:text-red-600"
-          onClick={() => {
-            onAddToFavorite(id);
-          }}
-        >
-          {isFavorite ? <FaHeart /> : <FaRegHeart />}
-        </button>
       </div>
       <div className="flex flex-wrap justify-between">
         <div>
@@ -62,6 +52,9 @@ const AsteroidItem: React.FC<AsteroidItemProps> = ({
           <p>Fecha de aproximación: {closeApproachDate}</p>
           <p>Cuerpo orbital: {orbitingBody}</p>
         </div>
+      </div>
+      <div className="flex justify-end">
+        <FavouriteButton isFavorite={isFavorite} id={id} />
       </div>
     </div>
   );

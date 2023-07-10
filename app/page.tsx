@@ -1,6 +1,6 @@
 import Image from "next/image";
-import AsteroidItemClientWrapper from "./_components/AsteroidItem.client";
-import nasaService from "../services/nasa.service";
+import { DatePickerRange } from "./_components/DatePickerRange";
+import ListOfAsteroids from "./_components/ListOfAsteroids";
 
 type HomeProps = {
   searchParams: {
@@ -10,8 +10,6 @@ type HomeProps = {
 };
 
 export default async function Home({ searchParams }: HomeProps) {
-  console.log(searchParams);
-  const asteroidsData = await nasaService.getAsteroids(searchParams);
   return (
     <div>
       <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
@@ -29,11 +27,11 @@ export default async function Home({ searchParams }: HomeProps) {
       </header>
       <main className="flex flex-col justify-between pt-12">
         <div className="flex justify-end pr-12 pl-12">
-          <p className="text-right">Total: {asteroidsData.total}</p>
+          <div>
+            <DatePickerRange />
+          </div>
         </div>
-        {asteroidsData.data.map((asteroid) => (
-          <AsteroidItemClientWrapper key={asteroid.id} {...asteroid} />
-        ))}
+        <ListOfAsteroids {...searchParams} />
       </main>
     </div>
   );
